@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'FucXed';
+    /* Upload fonts on your own server and replace urls with your own. */
+    src: url('path/to/your/font.woff') format('woff'),
+url('path/to/your/font.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3 {
+	font-family: "FucXed", sans-serif;
+	text-transform: uppercase;
+}

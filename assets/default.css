@@ -1,0 +1,571 @@
+:root
+{
+  --yellow: hsl(43, 100%, 55%);
+  --yellow-active: hsl(43, 100%, 45%);
+  --angry: hsl(325, 80%, 45%);
+  --angry-active: hsl(325, 80%, 35%);
+  --light-blue: hsl(198, 80%, 70%);
+  --pink: hsl(330, 70%, 75%);
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  src: url('assets/fonts/Crimson_Pro/Crimson_Pro_variable_latin_200_900_ital.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Crimson Pro';
+  src: url('./assets/fonts/Crimson_Pro/Crimson_Pro_variable_latin_200_900_ital.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+/* @font-face {
+  font-family: 'FUCXEDCAPS';
+  src: url('assets/fonts/Fucxed/FUCXEDCAPSLatin-Regular.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'FucXed';
+  /* Upload fonts on your own server and replace urls with your own. */
+  src: url('./assets/fonts/Fucxed Font Latin/FUCXEDCAPSLatin-Regular.woff') format('woff'),
+url('./assets/fonts/Fucxed Font Latin/FUCXEDCAPSLatin-Regular.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html
+{
+  box-sizing: border-box;
+}
+*, *::before, *::after
+{
+  box-sizing: inherit;
+}
+
+body
+{
+  font: 1.25rem/1.25 'Crimson Pro', serif;
+  text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 32rem) {
+  body
+  {
+    font-size: 1.1rem;
+  }
+}
+h1,
+h2,
+h3,
+div.action p,
+div.instructions p,
+li strong,
+label,
+button,
+a.button,
+nav.lang a
+{
+  font-family: 'FucXed', sans-serif;
+  line-height: 1.1;
+  margin: 0;
+}
+h1,h2,h3,h4 {
+	text-transform: uppercase;
+}
+h1,
+h2
+{
+  font-size: 2.5em;
+}
+h3
+{
+  font-size: 2em;
+}
+@media (max-width: 32rem) {
+  h1,
+  h2
+  {
+    font-size: 1.5em;
+  }
+  h3
+  {
+    font-size: 1.25em;
+  }
+}
+
+body
+{
+  margin: 0;
+  background: var(--light-blue) no-repeat linear-gradient(var(--light-blue), var(--pink));
+  color: black;
+}
+
+a
+{
+  font-weight: bold;
+}
+a[href]
+{
+  color: hsl(220, 80%, 40%);
+}
+a:active
+{
+  color: hsl(220, 80%, 30%);
+}
+
+img,
+svg
+{
+  display: block;
+}
+svg
+{
+  width: 100%;
+  height: 100%;
+}
+
+label.button,
+button,
+a.button,
+nav.lang a
+{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0.375em 0.75em;
+  border: none;
+  border-radius: 0.375em;
+  color: var(--yellow) !important;
+  background: var(--angry);
+  font-size: 100%;
+  text-align: center;
+  cursor: default;
+}
+div.instructions li a.button,
+nav.lang a
+{
+  padding: calc(0.25em + 1px) 0.5em 0.25em 0.5em;
+}
+a.button,
+nav.lang a
+{
+  text-decoration: none;
+}
+label.button:not(:disabled),
+button:not(:disabled),
+a.button:not(:disabled),
+nav.lang a[href]
+{
+  cursor: pointer;
+}
+label:disabled,
+button:disabled,
+a.button:disabled,
+nav.lang a:not([href])
+{
+  opacity: 0.5;
+}
+label.button:not(:disabled):active,
+button:not(:disabled):active,
+a.button:not(:disabled):active,
+nav.lang a[href]:active
+{
+  background: var(--angry-active);
+}
+label input[type=file]
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+div.column
+{
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0
+           max(1em, env(safe-area-inset-left))
+           0
+           max(1em, env(safe-area-inset-right));
+}
+div.instructions div.column
+{
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+}
+@media (max-width: 52rem) {
+  div.instructions div.column
+  {
+    padding-top: 0.125em;
+    padding-bottom: 0.125em;
+  }
+}
+
+div.bar
+{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  background: var(--angry);
+}
+div.bar a.back
+{
+  display: block;
+  align-self: stretch;
+  width: 2.75em;
+  min-height: 2.75em;
+  padding: 0.25em;
+}
+div.bar a.back svg path
+{
+  fill: var(--yellow);
+}
+div.bar a.back:active svg path
+{
+  fill: var(--yellow-active);
+}
+div.bar h1
+{
+  flex: 1 1 auto;
+  margin: 0.25em 1.75em 0.25em 0;
+  font-size: 150%;
+  line-height: 1;
+  text-align: center;
+  color: var(--yellow);
+}
+
+header,
+footer
+{
+  position: relative;
+  text-shadow: 0 0 2em rgba(0, 0, 0, 0.25);
+}
+header
+{
+  padding: max(2em, env(safe-area-inset-top)) 0 2em 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)),
+              center / cover url('./img/background-top.jpg?2');
+}
+footer
+{
+  padding: 2em 0 max(2em, env(safe-area-inset-bottom)) 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)),
+              center / cover url('./img/background-bottom.jpg?2');
+}
+main
+{
+  padding: 2em 0;
+}
+@media (max-width: 52rem) {
+  header
+  {
+    padding: max(1em, env(safe-area-inset-top)) 0 1em 0;
+  }
+  footer
+  {
+    padding: 1em 0 max(1em, env(safe-area-inset-bottom)) 0;
+  }
+  main
+  {
+    padding: 1em 0;
+  }
+}
+
+nav.lang
+{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.85em;
+}
+nav.lang a:first-child
+{
+  border-radius: 0.375em 0 0 0.375em;
+}
+nav.lang a:last-child
+{
+  border-radius: 0 0.375em 0.375em 0;
+}
+
+p.credit
+{
+  position: absolute;
+  left: 100%;
+  bottom: 0;
+  transform-origin: left bottom;
+  transform: rotate(-90deg);
+  width: max-content;
+  margin: 0;
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75em;
+  color: white;
+  text-shadow: 0 0 0.125em rgba(0, 0, 0, 0.75);
+}
+
+header h1,
+footer h1
+{
+  margin-top: 0.5em;
+  font-size: min(12rem, 12vw);
+  line-height: 0.8;
+  color: var(--yellow);
+}
+footer h1
+{
+  margin-top: 2.25em;
+}
+header h1 span,
+footer h1 span
+{
+  display: block;
+}
+
+div.action,
+div.instructions
+{
+  padding: 1em 0;
+  background: black;
+  color: var(--yellow);
+}
+
+div.action div.column > div
+{
+  display: flex;
+  font-size: min(2rem, 2vw);
+  gap: 1.5em;
+  flex-flow: row wrap;
+  align-items: center;
+}
+div.action img
+{
+  height: 4.0625em;
+}
+div.action h2
+{
+  flex: 0 0 auto;
+  position: relative;
+  top: 0.0125em;
+  font-size: 2.5em;
+  line-height: 0.85;
+  color: white;
+}
+div.action h2 span
+{
+  display: block;
+}
+
+div.instructions div.column
+{
+  display: flex;
+  justify-content: space-between;
+  gap: 1.125em;
+  flex-flow: row wrap;
+}
+div.instructions div.column > div
+{
+  flex: 0 0 auto;
+}
+div.instructions ol
+{
+  margin: 0.675em 0 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+div.instructions li
+{
+  font-size: 0.85em;
+}
+div.instructions li + li
+{
+  margin-top: 0.125em;
+}
+div.instructions li a.button,
+nav.lang a
+{
+  display: inline-block;
+  margin: 0.125em 0;
+}
+div.instructions li a.button:before
+{
+  content: counter(list-item) ': ';
+}
+
+main h1,
+main h2,
+main h3
+{
+  color: var(--angry);
+}
+main h1 strong,
+main h2 strong,
+main h3 strong
+{
+  display: inline-block;
+  z-index: -1;
+  padding: 2px 0.1875em 1px 0.1875em;
+  margin: -2px -0.125em -1px -0.125em;
+  background: var(--yellow);
+}
+main p
+{
+  margin: 0.5em 0 1.25em 0;
+}
+main p:first-child
+{
+  margin-top: 0;
+}
+main p:last-child
+{
+  margin-bottom: 0;
+}
+main p + p,
+main p + ol
+{
+  margin-top: -0.5em;
+}
+main p:last-child
+{
+  margin-bottom: 0;
+}
+main ol
+{
+  margin: 0;
+  padding: 0 0 0 2em;
+}
+/*@media (min-width: 56em)
+{
+  main ol
+  {
+    padding: 0;
+  }
+}*/
+main ol li
+{
+  margin: 0.75em 0;
+  margin: 0; /* TODO: Temporarily for suspension. */
+  padding: 0;
+  list-style-type: bullit;
+}
+
+div.symbol
+{
+  background: black;
+}
+div.symbol a
+{
+  display: block;
+  margin: 0 auto;
+  padding: 1em;
+}
+div.symbol a svg
+{
+  height: min(8rem, 12vw);
+}
+div.symbol a svg path
+{
+  fill: var(--angry);
+}
+div.symbol a:active svg path
+{
+  fill: var(--angry-active);
+}
+
+html.tool
+{
+  height: 100%;
+}
+html.tool body,
+html.tool main
+{
+  height: 100%;
+}
+html.tool main
+{
+  display: grid;
+  grid: min-content 1fr 2.25em / auto;
+  padding: 0 0 1em 0;
+  gap: 1em;
+}
+html.tool main > div:not(.bar)
+{
+  position: relative;
+  margin: 0 1em;
+}
+html.tool main > div > div
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html.tool main > div > div > img
+{
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.125),
+              0 0.125em 1em rgba(0, 0, 0, 0.125);
+}
+html.tool main > div.controls
+{
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+html.tool main > div.controls *
+{
+  -webkit-user-select: none;
+  user-select: none;
+}
+html.tool main > div.controls > *
+{
+  flex: 1 1 0;
+  max-width: 16em;
+}
+html.tool canvas
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  height: 10px;
+  visibility: hidden;
+}
+
+@media print {
+  body
+  {
+    font-size: 11pt;
+  }
+  h1,
+  h2
+  {
+    font-size: 1.5em;
+  }
+  h3
+  {
+    font-size: 1em;
+  }
+  *
+  {
+    color: black !important;
+    background: white !important;
+  }
+  header,
+  footer,
+  div.action,
+  div.instructions
+  {
+    display: none;
+  }
+}
