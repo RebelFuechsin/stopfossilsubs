@@ -10,29 +10,20 @@
 
 @font-face {
   font-family: 'Crimson Pro';
-  src: url('assets/fonts/Crimson_Pro/Crimson_Pro_variable_latin_200_900_ital.woff2') format('woff2');
+  src: url('fonts/Crimson_Pro/Crimson_Pro_variable_latin_200_900_ital.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Crimson Pro';
-  src: url('./assets/fonts/Crimson_Pro/Crimson_Pro_variable_latin_200_900_ital.woff2') format('woff2');
+  src: url('fonts/Crimson_Pro/Crimson_Pro_variable_latin_200_900_ital.woff2') format('woff2');
   font-weight: bold;
   font-style: normal;
 }
-/* @font-face {
-  font-family: 'FUCXEDCAPS';
-  src: url('assets/fonts/Fucxed/FUCXEDCAPSLatin-Regular.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-} */
-
 @font-face {
-  font-family: 'FucXed';
-  /* Upload fonts on your own server and replace urls with your own. */
-  src: url('./assets/fonts/Fucxed Font Latin/FUCXEDCAPSLatin-Regular.woff') format('woff'),
-url('./assets/fonts/Fucxed Font Latin/FUCXEDCAPSLatin-Regular.otf') format('otf');
-  font-weight: normal;
+  font-family: 'FUCXEDCAPS';
+  src: url('fonts/Fucxed/FUCXEDCAPSLatin-Regular.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -57,6 +48,11 @@ body
     font-size: 1.1rem;
   }
 }
+@media only screen and (max-width: 500px) {
+  h1 span {
+    font-size: 35%;
+  }
+}
 h1,
 h2,
 h3,
@@ -68,7 +64,7 @@ button,
 a.button,
 nav.lang a
 {
-  font-family: 'FucXed', sans-serif;
+  font-family: 'FUCXEDCAPS', sans-serif;
   line-height: 1.1;
   margin: 0;
 }
@@ -79,6 +75,10 @@ h1,
 h2
 {
   font-size: 2.5em;
+}
+h1.german{
+  font-size: 6.5em;
+  margin-top: 10rem;
 }
 h3
 {
